@@ -1,0 +1,3 @@
+[submodule "linux-system-config"]
+	path = linux-system-config
+	url = https://github.com/krypciak/linux-system-config
