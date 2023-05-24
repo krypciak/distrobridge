@@ -6,7 +6,7 @@ if [ -f /90-mkinitcpio-install.hook ]; then
 fi
 
 # If there is internet access
-if command -v ntpd > /dev/null 2>&1 && ping -c 1 gnu.org > /dev/null 2>&1; then
+if ping -c 1 gnu.org > /dev/null 2>&1; then
     set +e
     info "Removing pacman orphans"
     paru -Sy > /dev/null 2>&1
@@ -15,6 +15,7 @@ if command -v ntpd > /dev/null 2>&1 && ping -c 1 gnu.org > /dev/null 2>&1; then
     info "Cleaning pacman cache"
     paru --noconfirm -Scc > /dev/null 2>&1
     set -e
+    pacman -Sy > /dev/null 2>&1
 fi
 
 if [ "$MODE" != 'live' ]; then

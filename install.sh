@@ -1,6 +1,7 @@
 #!/bin/sh
 #RUN_ARGS=-v artix -m iso
 set -e
+set -a
 
 REPOHUB="$(printf "$(dirname $0)/../" | xargs realpath)"; . "$REPOHUB"/util.sh
 # distro bridge dir

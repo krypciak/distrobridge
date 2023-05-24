@@ -26,6 +26,7 @@ cleanup /var/tmp
 
 rm -f /etc/machine-id
 
-. "$DB"/profile/"$VARIANT"/scritps/cleanup.sh
+echo "$DB"
+[ -f "$DB"/profile/"$VARIANT"/scripts/cleanup.sh ] && . "$DB"/profile/"$VARIANT"/scripts/cleanup.sh
 
 wait $(jobs -p)

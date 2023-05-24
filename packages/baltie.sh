@@ -16,10 +16,11 @@ _install_baltie() {
     rm -rf "$INSTALL_DIR"
     mv /tmp/baltie-extracted/app "$INSTALL_DIR"
     
-    cp "$COMMON_CONFIGS_DIR/Baltie3.desktop" "$USER_HOME/.local/share/applications"
-    chown "$USER1:$USER_GROUP" -R "$USER_HOME/.local/share/applications"
-    chmod +x "$USER_HOME/.local/share/applications/Baltie3.desktop"
-    chown "$USER1:$USER_GROUP" -R "$USER_HOME/.local/share/wine"
+    mkdir -p "$USER_HOME"/.local/share/applications
+    cp "$DB"/profile/common/configs/Baltie3.desktop "$USER_HOME"/.local/share/applications/
+    chown "$USER1:$USER_GROUP" -R "$USER_HOME"/.local/share/applications
+    chmod +x "$USER_HOME"/.local/share/applications/Baltie3.desktop
+    chown "$USER1:$USER_GROUP" -R "$USER_HOME"/.local/share/wine
 
     # Init wine prefix
     doas -u "$USER1" env WINEPREFIX="$USER_HOME/.local/share/wine" DISPLAY='' WAYLAND_DISPLAY='' timeout 5s /usr/bin/wine "C:\\\\Program Files (x86)\\\\SGP Systems\\\\SGP Baltie 3\\\\baltie.exe" > /dev/null 2>&1

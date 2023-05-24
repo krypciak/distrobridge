@@ -27,7 +27,7 @@ if [ "$NET" = 'offline' ]; then
         exit 1
     fi
     # shellcheck disable=SC2010
-    pacman --noconfirm --needed -U $(ls -- *.pkg.tar.zst -1 | grep -E -e $(echo $PACKAGE_LIST | tr ' ' '\n' | awk '{print "-e ^" $1 "-"}' | xargs)) 2> /dev/stdout | grep -v 'skipping' > $OUTPUT 2>&1
+    pacman --noconfirm --needed -U $(ls -- *.pkg.tar.zst | grep -E -e $(echo $PACKAGE_LIST | tr ' ' '\n' | awk '{print "-e ^" $1 "-"}' | xargs)) 2> /dev/stdout | grep -v 'skipping' > $OUTPUT 2>&1
 else
     n=0
     until [ "$n" -ge 5 ]; do

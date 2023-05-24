@@ -1,15 +1,6 @@
 #!/bin/sh
 set -e
 
-INSTALL_DIR="$1"
-shift
-MOUNT_ACTION="$1"
-shift
-UMOUNT_ACTION="$1"
-shift
-PRE_CHROOT_ACTION="$1"
-shift
-
 _mount() {
     mkdir -p "$INSTALL_DIR"
     cd "$INSTALL_DIR"
@@ -48,14 +39,13 @@ _umount() {
 }
 
 trap '_umount > /dev/null 2>&1' EXIT TERM QUIT
-    eval "$MOUNT_ACTION"
+eval "$MOUNT_ACTION"
 
 
 _umount > /dev/null 2>&1
 _mount
-
 eval "$PRE_CHROOT_ACTION"
 
-unshare --fork --pid chroot "$INSTALL_DIR" "$@"
+unshare --fork --pid chroot "$INSTALL_DIR" $CMD
 _umount > /dev/null 2>&1
 

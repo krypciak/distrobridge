@@ -1,9 +1,10 @@
 #!/bin/sh
+
 [ "$REPOHUB" = '' ] && err '$REPOHUB variable not set. This script is not ment to be run by the user.' && exit 1
 set -a
 set -e
 
-REPOHUB="$(printf "$(dirname $0)/../" | xargs realpath)"; . "$REPOHUB"/util.sh; DB="$(printf "$REPOHUB/distrobridge" | xargs realpath)"
+"$REPOHUB"/util.sh; DB="$(printf "$REPOHUB/distrobridge" | xargs realpath)"
 
 if [ "$MODE" = 'iso' ]; then
     . "$DB"/vars.conf.iso.sh
@@ -33,11 +34,12 @@ printf "#000000" > $REPOHUB/dotfiles/user/.config/wallpapers/selected
 
 echo 'export WINIT_X11_SCALE_FACTOR=1.2' >> $USER_HOME/.config/at-login.sh
 
-. "$DB"/iso/mkinitcpio.sh
+. "$DB"/profile/iso/scripts/mkinitcpio.sh
 
 
 info "neofetch!"
 command -v 'neofetch' > /dev/null 2>&1 && neofetch
 
-[ "$PAUSE_AFTER_DONE" = '1' ] && confirm 'Y ignore' "Confirm to continue" '' 'err "Said no to continuation prompt"; exit 1'
- 
+if [ "$PAUSE_AFTER_DONE" = '1' ]; then
+    confirm 'Y ignore' "Confirm to continue" '' 'err "Said no to continuation prompt"; exit 1'
+fi

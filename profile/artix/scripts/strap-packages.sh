@@ -16,13 +16,13 @@ mkdir -p "$INSTALL_DIR"/var/cache/pacman/pkg
 cp -r "$DB"/profile/"$VARIANT"/root/etc/pacman.d "$INSTALL_DIR"/etc/
 
 if [ "$NET" = 'offline' ]; then
-    cp  "$DB"/profile/"$VARIANT"/root/pacman.conf.offlinestrap "$INSTALL_DIR"/tmp/pacman.conf
+    cp  "$DB"/profile/"$VARIANT"/configs/pacman.conf.offlinestrap "$INSTALL_DIR"/tmp/pacman.conf
     REPOS="\n[offline]\nSigLevel = PackageRequired\nServer = file://$DB/packages/offline/$VARIANT/packages\n"
     
     sed -i -e "s|LocalFileSigLevel = TrustAll|LocalFileSigLevel = TrustAll\n$REPOS|g" "$INSTALL_DIR"/tmp/pacman.conf
     sed -i -e "s|#CacheDir    = /var/cache/pacman/pkg/|CacheDir    = /packages/|g" "$INSTALL_DIR"/tmp/pacman.conf
 else
-    cp  "$DB"/profile/"$VARIANT"/root/pacman.conf.strap "$INSTALL_DIR"/tmp/pacman.conf
+    cp  "$DB"/profile/"$VARIANT"/configs/pacman.conf.strap "$INSTALL_DIR"/tmp/pacman.conf
 fi
 sed -i -e "s|INSTALL_DIR|$INSTALL_DIR|g" "$INSTALL_DIR"/tmp/pacman.conf
 

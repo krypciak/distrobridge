@@ -8,7 +8,3 @@ fi
 mkdir -p "$USER_HOME"
 
 chown -R "$USER1:$USER_GROUP" "$USER_HOME"
-mkdir -p "$USER_HOME"/.config
-chown -R "$USER1:$USER_GROUP" "$USER_HOME"/.config
-mkdir -p "$USER_HOME"/.local
-chown -R "$USER1:$USER_GROUP" "$USER_HOME"/.local

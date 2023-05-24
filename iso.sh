@@ -33,20 +33,20 @@ _wait_dir_mount() {
 
 _wait_dir_mount
 
- . "$SCRIPTS_DIR"/chroot/prepare-chroot.sh
+ . "$DB"/chroot/prepare-chroot.sh
 
 mkdir -p "$ISO_ROOT"/boot
 cp "$ISO_ROOTFS"/boot/initramfs-x86_64.img "$ISO_ROOTFS"/boot/*-ucode.img "$ISO_ROOT"/boot/
 
-. "$SCRIPTS_DIR"/iso/grub.sh
+. "$DB"/profile/iso/scripts/grub.sh
 
-. "$SCRIPTS_DIR"/iso/squash.sh
+. "$DB"/profile/iso/scripts/squash.sh
 
-. "$SCRIPTS_DIR"/iso/mkiso.sh
+. "$DB"/profile/iso/scripts/mkiso.sh
 
 rm -rf "$ISO_ROOT"
 
-chown $USER1:$USER1 "$ISO_OUT_FILE"
+chown "$USER1:$USER1" "$ISO_OUT_FILE"
 info "Building ISO done."
 echo $ISO_OUT_FILE
 

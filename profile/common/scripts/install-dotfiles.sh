@@ -9,11 +9,12 @@ if [ "$INSTALL_DOTFILES" = '1' ]; then
     else
         info "Installing dotfiles for user <user>$USER1</user>"
         rm -rf "$USER_HOME"/.config
+        rm -rf "$USER_HOME"/.local
         doas -u "$USER1" sh "$REPOHUB"/dotfiles/install-user.sh > $OUTPUT
 
         info "Installing dotfiles for <user>root</user>"
         . "$REPOHUB"/dotfiles/install-root.sh > $OUTPUT
-
+        
         if [ "$INSTALL_PRIVATE_DOTFILES" = '1' ]; then
             confirm "Install private dotfiles?"
             export GPG_AGENT_INFO=""
