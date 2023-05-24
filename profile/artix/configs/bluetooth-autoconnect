@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+command=/usr/bin/bluetooth-autoconnect
+command_args="-d"
+pidfile=
+
+name="bluetooth-autoconnect"
+description="Bluetooth autoconnect service"

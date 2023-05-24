@@ -1,0 +1,1 @@
+../../artix/scripts/cleanup.sh

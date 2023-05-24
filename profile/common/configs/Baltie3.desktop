@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Baltie 3
+Exec=env WINEPREFIX="/home/krypek/.local/share/wine" /usr/bin/wine "C:\\\\Program Files (x86)\\\\SGP Systems\\\\SGP Baltie 3\\\\baltie.exe"
+Type=Application
+StartupNotify=true
+Path=/home/krypek/.local/share/wine/dosdevices/c:/Program Files (x86)/SGP Systems/SGP Baltie 3
+Icon=6D3B_baltie.0
+StartupWMClass=baltie.exe

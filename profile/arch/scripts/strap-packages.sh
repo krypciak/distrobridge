@@ -1,0 +1,1 @@
+../../artix/scripts/strap-packages.sh

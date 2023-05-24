@@ -1,0 +1,33 @@
+[options]
+RootDir     = INSTALL_DIR/
+DBPath      = INSTALL_DIR/var/lib/pacman/
+CacheDir    = INSTALL_DIR/packages/
+LogFile     = INSTALL_DIR/var/log/pacman.log
+GPGDir      = INSTALL_DIR/etc/pacman.d/gnupg/
+HookDir     = INSTALL_DIR/etc/pacman.d/hooks/
+HoldPkg     = pacman glibc
+#XferCommand = /usr/bin/curl -L -C - -f -o %o %u
+#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+#CleanMethod = KeepInstalled
+Architecture = auto
+
+#IgnorePkg   =
+#IgnoreGroup =
+
+#NoUpgrade   =
+#NoExtract   =
+
+# Misc options
+#UseSyslog
+Color
+#NoProgressBar
+CheckSpace
+#VerbosePkgLists
+ParallelDownloads = 5
+
+SigLevel    = TrustAll
+LocalFileSigLevel = TrustAll
+
+#[offline]
+#SigLevel = TrustAll
+#Server = file:///packages

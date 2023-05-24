@@ -1,0 +1,14 @@
+#!/usr/bin/openrc-run
+
+description="iso script"
+
+depend() {
+	use net
+	need haveged gnupg-mount
+}
+
+start() {
+	ebegin "Running pacman initialization"
+    sh /etc/arch-artix-net.sh
+	eend 0
+}

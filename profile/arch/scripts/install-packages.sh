@@ -1,0 +1,1 @@
+../../artix/scripts/install-packages.sh
