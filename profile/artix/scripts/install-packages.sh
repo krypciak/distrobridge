@@ -22,7 +22,7 @@ rm -f /usr/bin/sudo
 info "Installing groups: <user>$GROUP_LIST</user>"
 
 if [ "$NET" = 'offline' ]; then
-    if ! cd "$USER_HOME"/home/.config/dotfiles/install/packages/offline/"$VARIANT"/packages; then
+    if ! cd "$USER_HOME"/home/.config/repohub/distrobridge/packages/offline/"$VARIANT"/packages; then
         err "Offline packages dir for variant <user>$VARIANT</user> missing."
         exit 1
     fi
