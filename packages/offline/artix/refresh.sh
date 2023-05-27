@@ -1,2 +1,2 @@
-#!/bin/bash
-rm -r packages pacman.txt
+#!/bin/sh
+rm -rf packages pacman.txt
