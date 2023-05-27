@@ -4,7 +4,6 @@
 . "$DB"/profile/"$VARIANT"/scripts/init-keyring.sh
 . "$DB"/profile/"$VARIANT"/scripts/install-paru.sh
 
-confirm "Install packages?"
 PACKAGE_LIST=''
 GROUP_LIST=''
 for group in $PACKAGE_GROUPS; do
@@ -27,7 +26,7 @@ if [ "$NET" = 'offline' ]; then
         exit 1
     fi
     # shellcheck disable=SC2010
-    pacman --noconfirm --needed -U $(ls -- *.pkg.tar.zst | grep -E -e $(echo $PACKAGE_LIST | tr ' ' '\n' | awk '{print "-e ^" $1 "-"}' | xargs)) 2> /dev/stdout | grep -v 'skipping' > $OUTPUT 2>&1
+    pacman --noconfirm --needed -U $(ls -1 -- *.pkg.tar.zst | grep -E -e $(echo $PACKAGE_LIST | tr ' ' '\n' | awk '{print "-e ^" $1 "-[[:digit:]]"}' | xargs)) 2> /dev/stdout | grep -v 'skipping' > $OUTPUT 2>&1
 else
     n=0
     until [ "$n" -ge 5 ]; do
@@ -38,5 +37,4 @@ else
     done
     if [ "$n" -eq 5 ]; then err "Package installation failed."; sh; exit 1; fi
 fi
-
 

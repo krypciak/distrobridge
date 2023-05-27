@@ -2,7 +2,7 @@
 [ "$DB" = '' ] && err '$DB variable not set. This script is not ment to be run by the user.' && exit 1
 set -e
 
-confirm "Install basic packages to ${INSTALL_DIR}?"
+info_garr "Preparing to strap packages into <path>$INSTALL_DIR</path>"
 
 # import base package list
 . "$DB"/packages/base.sh
@@ -22,13 +22,17 @@ if [ "$NET" = 'offline' ]; then
     sed -i -e "s|LocalFileSigLevel = TrustAll|LocalFileSigLevel = TrustAll\n$REPOS|g" "$INSTALL_DIR"/tmp/pacman.conf
     sed -i -e "s|#CacheDir    = /var/cache/pacman/pkg/|CacheDir    = /packages/|g" "$INSTALL_DIR"/tmp/pacman.conf
 else
-    cp  "$DB"/profile/"$VARIANT"/configs/pacman.conf.strap "$INSTALL_DIR"/tmp/pacman.conf
+    cp "$DB"/profile/"$VARIANT"/configs/pacman.conf.strap "$INSTALL_DIR"/tmp/pacman.conf
 fi
 sed -i -e "s|INSTALL_DIR|$INSTALL_DIR|g" "$INSTALL_DIR"/tmp/pacman.conf
 
+info_barr "Generating keyring"
 pacman-key --config "$INSTALL_DIR"/tmp/pacman.conf --init > $OUTPUT 2>&1
 pacman-key --config "$INSTALL_DIR"/tmp/pacman.conf --populate archlinux > $OUTPUT 2>&1
+info_barr "Straping packages"
 pacman --config "$INSTALL_DIR"/tmp/pacman.conf \
     --color=always --needed --noconfirm  \
-    -Sy $(${VARIANT}_base_install) #2> /dev/stdout | grep -v 'skipping' > $OUTPUT 2>&1 
+    -Sy $(${VARIANT}_base_install)  > $OUTPUT 2>&1 
+
+info_barr "Done"
 
