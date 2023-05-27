@@ -34,7 +34,7 @@ if [ '$REPOHUB' = '' ]; then
 else
     info \"Copying <path>repohub</path> to <path>$_USER_CONFIG_DIR/repohub</path>\"
     rsync -a --exclude='install/artix/' $EXCLUDE_FLAG $REPOHUB $_USER_CONFIG_DIR
-    rm -rf $REPOHUB/dotfiles/user/private $REPOHUB/dotfiles/user/private.old
+    rm -rf $_USER_CONFIG_DIR/repohub/dotfiles/user/private $_USER_CONFIG_DIR/repohub/dotfiles/user/private.old
 fi
 info \"Chrooting into <path>$INSTALL_DIR</path>...\"
 "
