@@ -1,5 +1,4 @@
 #!/bin/sh
-#RUN_ARGS=-v artix -m iso
 set -e
 set -a
 
