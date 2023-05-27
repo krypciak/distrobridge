@@ -10,6 +10,7 @@ if [ "$INSTALL_DOTFILES" = '1' ]; then
         info "Installing dotfiles for user <user>$USER1</user>"
         rm -rf "$USER_HOME"/.config
         rm -rf "$USER_HOME"/.local
+        rm -rf "$USER_HOME"/.cache
         doas -u "$USER1" sh "$REPOHUB"/dotfiles/install-user.sh > $OUTPUT
 
         info "Installing dotfiles for <user>root</user>"
