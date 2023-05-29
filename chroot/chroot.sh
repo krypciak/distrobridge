@@ -17,7 +17,8 @@ _mount() {
     mount tmp "$INSTALL_DIR/tmp" -t tmpfs -o mode=1777,strictatime,nodev,nosuid
     
     mount --bind /sys/firmware/efi/efivars "$INSTALL_DIR/sys/firmware/efi/efivars/"
-    cp /etc/resolv.conf $INSTALL_DIR/etc/resolv.conf
+    rm -f "$INSTALL_DIR"/etc/resolv.conf
+    cp /etc/resolv.conf "$INSTALL_DIR"/etc/resolv.conf
     
     eval "$MOUNT_ACTION"
 }
