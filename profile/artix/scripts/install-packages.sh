@@ -2,6 +2,7 @@
 [ "$DB" = '' ] && err '$DB variable not set. This script is not ment to be run by the user.' && exit 1
 
 . "$DB"/profile/"$VARIANT"/scripts/init-keyring.sh
+. "$DB"/profile/"$VARIANT"/scripts/install-base.sh
 . "$DB"/profile/"$VARIANT"/scripts/install-paru.sh
 
 PACKAGE_LIST=''

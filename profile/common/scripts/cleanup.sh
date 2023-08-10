@@ -11,7 +11,9 @@ rm -rf /dotfiles &
 rm -rf "$USER_HOME"/.cache
 mkdir -p "$USER_HOME"/.cache
 echo 0 > "$USER_HOME"/.cache/update
-chown -R "$USER1:$USER_GROUP" "$USER_HOME" &
+chown -RH "$USER1:$USER_GROUP" "$USER_HOME" &
+chown -RH "$USER1:$USER_GROUP" "$USER_HOME/.config" &
+chown -RH "$USER1:$USER_GROUP" "$USER_HOME/.local/share" &
 
 cp "$DB"/profile/common/root/etc/doas.conf /etc/doas.conf
 chmod 0040 /etc/doas.conf
@@ -26,7 +28,6 @@ cleanup /var/tmp
 
 rm -f /etc/machine-id
 
-echo "$DB"
 [ -f "$DB"/profile/"$VARIANT"/scripts/cleanup.sh ] && . "$DB"/profile/"$VARIANT"/scripts/cleanup.sh
 
 wait $(jobs -p)

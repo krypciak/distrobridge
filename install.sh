@@ -104,7 +104,7 @@ elif [ "$MODE" = 'disk' ]; then
     . "$DB"/disk.sh
 
 elif [ "$MODE" = 'dir' ]; then
-    . "$DB"/chroot.sh
+    . "$DB"/chroot/prepare-chroot.sh
 fi
 
 

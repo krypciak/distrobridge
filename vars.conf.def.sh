@@ -69,16 +69,11 @@ PACKAGE_GROUPS="$PACKAGE_GROUPS virt"      # QEMU
 PACKAGE_GROUPS="$PACKAGE_GROUPS android"   # adb
 #PACKAGE_GROUPS="$PACKAGE_GROUPS baltie"    # https://sgpsys.com/en/whatisbaltie.asp
 
-# Disk 
-DISK='/dev/vda'
-
 
 # Bootloader
 BOOTLOADER_ID="$VARIANT_NAME"
 BOOT_PART="${DISK}1"
 BOOT_SIZE='500M'
-INSTALL_DIR='/mnt/install'
-
 
 # Encryption
 # 0 -> disable  1 -> enable

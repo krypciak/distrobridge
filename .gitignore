@@ -1,4 +1,5 @@
 vars.conf.sh
 packages/offline/artix/packages
-packages/offline/artix/pacman.txt
-packages/offline/artix/blankdb
+packages/offline/artix/root
+packages/offline/arch/packages
+packages/offline/arch/root
