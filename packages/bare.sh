@@ -37,7 +37,11 @@ artix_bare_configure() {
 arch_bare_configure() {
     _configure_greetd
 
-    systemctl enable greetd > $OUTPUT 2>&1
+    # apperently greetd already enabled?
+    #set +e
+    #systemctl disable getty@tty1 > $OUTPUT 2>&1
+    #set -e
+    #systemctl enable greetd > $OUTPUT 2>&1
     systemctl enable openntpd > $OUTPUT 2>&1
     systemctl enable NetworkManager > $OUTPUT 2>&1
 
