@@ -23,7 +23,7 @@ artix_bluetooth_configure() {
 
 arch_bluetooth_configure() {
     if [ "$TYPE" != 'iso' ]; then
-        systemctl enable bluetoothd > $OUTPUT 2>&1
-        systemctl enable blutooth-autoconnect > $OUTPUT 2>&1
+        systemctl enable bluetooth > $OUTPUT 2>&1
+        systemctl enable bluetooth-autoconnect > $OUTPUT 2>&1
     fi
 }

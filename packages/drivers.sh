@@ -11,7 +11,7 @@ _artix_arch_driver_install() {
         if [ "$GPU" = 'amd' ]; then 
             # amdvlk lib32-amdvlk
             DRIVER_LIST="$DRIVER_LIST xf86-video-amdgpu amdvlk lib32-amdvlk vulkan-radeon lib32-vulkan-radeon"
-            cp $COMMON_CONFIGS_DIR/20-amdgpu.conf /etc/X11/xorg.conf.d/
+            # cp $COMMON_CONFIGS_DIR/20-amdgpu.conf /etc/X11/xorg.conf.d/
         elif [ "$GPU" = 'ati' ]; then DRIVER_LIST="$DRIVER_LIST xf86-video-ati amdvlk lib32-amdvlk vulkan-radeon lib32-vulkan-radeon"
         elif [ "$GPU" = 'intel' ]; then DRIVER_LIST="$DRIVER_LIST xf86-video-intel vulkan-intel lib32-vulkan-intel"
         elif [ "$GPU" = 'nvidia' ]; then DRIVER_LIST="$DRIVER_LIST xf86-video-nouveau"
