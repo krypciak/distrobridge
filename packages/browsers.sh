@@ -7,11 +7,11 @@ _init_browsers() {
 }
 
 artix_browsers_install() {
-    echo 'dialect firefox librewolf ungoogled-chromium'
+    echo 'chromium-extension-web-store firefox librewolf ungoogled-chromium-bin'
 }
 
 arch_browsers_install() {
-    echo 'dialect firefox'
+    echo 'chromium-extension-web-store firefox librewolf-bin ungoogled-chromium-bin'
 }
 
 

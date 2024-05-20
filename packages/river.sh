@@ -16,11 +16,11 @@ _configure_river() {
 
 
 artix_river_install() {
-    echo 'river-git rivercarro xdg-desktop-portal-wlr'
+    echo 'rivercarro river-git xdg-desktop-portal-wlr'
 }
 
 arch_river_install() {
-    echo 'river-git rivercarro xdg-desktop-portal-wlr'
+    echo 'rivercarro river-git xdg-desktop-portal-wlr'
 }
 
 artix_river_configure() {

@@ -2,11 +2,11 @@
 
 # github-desktop-bin
 artix_coding_install() {
-    echo 'eclipse-java git-filter-repo github-cli jdk17-openjdk jdk8-openjdk jdk-openjdk rust shellcheck typescript-language-server eslint-language-server eslint esbuild'
+    echo 'esbuild git-filter-repo github-cli jdk17-openjdk jdk8-openjdk jdk-openjdk rust shellcheck'
 }
 
 arch_coding_install() {
-    echo 'eclipse-java git-filter-repo github-cli jdk17-openjdk jdk8-openjdk jdk-openjdk rust shellcheck typescript-language-server esbuild'
+    echo 'esbuild git-filter-repo github-cli jdk17-openjdk jdk8-openjdk jdk-openjdk rust shellcheck'
 }
 
 artix_coding_configure() {
