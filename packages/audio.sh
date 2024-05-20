@@ -15,11 +15,11 @@
 # }
 
 artix_audio_install() {
-    echo 'cmus-git lib32-libpipewire lib32-pipewire lib32-pipewire-v4l2 libpipewire pavucontrol perl pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-jack-client pipewire-pulse pipewire-v4l2 playerctl wireplumber'
+    echo 'cmus-git lib32-libpipewire lib32-pipewire lib32-pipewire-v4l2 libpipewire pavucontrol perl pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-pulse pipewire-v4l2 playerctl wireplumber'
 }
 
 arch_audio_install() {
-    echo 'cmus-git lib32-libpipewire lib32-pipewire lib32-pipewire-v4l2 libpipewire pavucontrol perl pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-jack-client pipewire-pulse pipewire-v4l2 playerctl wireplumber'
+    echo 'cmus-git lib32-libpipewire lib32-pipewire lib32-pipewire-v4l2 libpipewire pavucontrol perl pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-pulse pipewire-v4l2 playerctl wireplumber'
 }
 
 

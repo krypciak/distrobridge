@@ -33,9 +33,9 @@ else
     until [ "$n" -ge 5 ]; do
         doas -u "$USER1" paru $PARU_ARGUMENTS $PACMAN_ARGUMENTS -S $PACKAGE_LIST > $OUTPUT 2>&1 && break
         n=$((n+1))
-        err "Package installation failed. Attempt $n/5"
+        err "Package installation failed. Attempt $n/3"
         sleep 3
     done
-    if [ "$n" -eq 5 ]; then err "Package installation failed."; sh; exit 1; fi
+    if [ "$n" -eq 3 ]; then err "Package installation failed."; sh; exit 1; fi
 fi
 
