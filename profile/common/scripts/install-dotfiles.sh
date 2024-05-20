@@ -14,7 +14,7 @@ if [ "$INSTALL_DOTFILES" = '1' ]; then
         doas -u "$USER1" sh "$REPOHUB"/dotfiles/install-user.sh > $OUTPUT
 
         info "Installing dotfiles for <user>root</user>"
-        . "$REPOHUB"/dotfiles/install-root.sh > $OUTPUT
+        sh "$REPOHUB"/dotfiles/install-root.sh > $OUTPUT
         
         if [ "$INSTALL_PRIVATE_DOTFILES" = '1' ]; then
             confirm "Install private dotfiles?"

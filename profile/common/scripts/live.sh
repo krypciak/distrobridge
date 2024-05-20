@@ -15,7 +15,7 @@ fi
 . "$DB"/profile/common/scripts/temp-doas.sh
 . "$DB"/profile/"$VARIANT"/scripts/install-packages.sh
 . "$DB"/profile/common/scripts/copy-configs.sh
-. "$DB"/profile/iso/scripts/copy-configs.sh
+# . "$DB"/profile/iso/scripts/copy-configs.sh
 . "$DB"/profile/common/scripts/temp-doas.sh
 . "$DB"/profile/common/scripts/install-dotfiles.sh
 . "$DB"/profile/common/scripts/set-passwords.sh

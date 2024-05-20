@@ -13,7 +13,7 @@ if ! command -v "paru" > /dev/null 2>&1; then
     if [ -f "$PARU_FILE" ]; then
         pacman $PACMAN_ARGUMENTS -U "$PARU_FILE" > $OUTPUT 2>&1
     else
-        pacman $PACMAN_ARGUMENTS -Sy git doas > $OUTPUT 2>&1
+        pacman $PACMAN_ARGUMENTS -Sy git doas debugedit > $OUTPUT 2>&1
         git clone https://aur.archlinux.org/paru-bin.git /tmp/paru > $OUTPUT 2>&1
         chown -R "$USER1:$USER_GROUP" /tmp/paru
         chmod -R +wrx /tmp/paru

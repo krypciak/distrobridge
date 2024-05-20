@@ -95,7 +95,7 @@ fi
 
 
 if [ "$MODE" = 'live' ]; then
-    . "$DB"/live/live.sh
+    . "$DB"/profile/common/scripts/live.sh
 
 elif [ "$MODE" = 'iso' ]; then
     . "$DB"/iso.sh
