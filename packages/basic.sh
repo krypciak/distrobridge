@@ -24,14 +24,14 @@ _configure_cronie() {
 
 artix_basic_install() {
     # ranger
-    echo ' artix-archlinux-support atuin autojump-rs bat bat-extras bc bottom cage clang cronie-openrc dog dust dysk fd fish fzf htop hyperfine imagemagick innoextract jq lazygit lsd man-db man-pages moreutils neofetch neovim-symlinks net-tools ouch p7zip paru-bin pastel pipr-bin procs pv pyright ripgrep rmtrash syntax-highlighting tealdeer tgpt-bin tmux tokei trash-cli ttf-nerd-fonts-symbols ttyper xorg-server-xvfb xorg-server-xvfb'
+    echo ' artix-archlinux-support atuin autojump-rs bat bat-extras bc bottom cage clang cronie-openrc dog dust dysk fd fish fzf htop hyperfine imagemagick innoextract jq lazygit lsd man-db man-pages moreutils neofetch neovim-symlinks net-tools ouch p7zip paru-bin pastel pipr-bin procs pv pyright ripgrep rmtrash syntax-highlighting tealdeer tgpt-bin tmux tokei trash-cli ttf-nerd-fonts-symbols ttyper xorg-server-xvfb xorg-server-xvfb zsh antigen zsh-autosuggestions'
     if [ "$LIB32" = '1' ]; then
         echo ' lib32-artix-archlinux-support'
     fi
 }
 
 arch_basic_install() {
-    echo 'atuin autojump-rs bat bat-extras bc bottom cage clang cronie dog dust dysk fd fish fzf htop hyperfine imagemagick innoextract jq lazygit lsd man-db man-pages moreutils neofetch neovim-symlinks net-tools ouch p7zip paru-bin pastel pipr-bin procs pv pyright ripgrep rmtrash syntax-highlighting tealdeer tgpt-bin tmux tokei trash-cli ttf-nerd-fonts-symbols ttyper xorg-server-xvfb xorg-server-xvfb'
+    echo 'atuin autojump-rs bat bat-extras bc bottom cage clang cronie dog dust dysk fd fish fzf htop hyperfine imagemagick innoextract jq lazygit lsd man-db man-pages moreutils neofetch neovim-symlinks net-tools ouch p7zip paru-bin pastel pipr-bin procs pv pyright ripgrep rmtrash syntax-highlighting tealdeer tgpt-bin tmux tokei trash-cli ttf-nerd-fonts-symbols ttyper xorg-server-xvfb xorg-server-xvfb zsh antigen zsh-autosuggestions'
 }
 
 #python3 -m pip install --user --upgrade pynvim
