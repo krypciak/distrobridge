@@ -4,7 +4,17 @@
 
 My personal linux install script.  
 I mostly use it to generate custom-built iso's for my usage.  
+It has a lot of configuration options, most notable ones:
+- [Dotfiles](https://github.com/krypciak/dotfiles) installation
+- Optional [LVM on LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) full-disk encryption
+- Selective package groups
+
+All options can be seen the [default configuration file](/vars.conf.def.sh)  
+
 CAUTION: You PC might explode if you use it.  
+
+
+## Usage 
 
 ```
 >> doas sh install.sh --help 
