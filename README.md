@@ -51,13 +51,13 @@ sudo sh install.sh --mode disk --variant arch --device /dev/vda
 ### Installing to the current system
 
 ```bash
-sudo sh install.sh --mode live -variant arch
+sudo sh install.sh --mode live --variant arch
 ```
 
 ### Installing to a directory
 
 ```bash
-sudo sh install.sh --mode dir -variant arch --dir /mnt/mymountedroot
+sudo sh install.sh --mode dir --variant arch --dir /mnt/mymountedroot
 ```
 
 ### Generating an ISO
