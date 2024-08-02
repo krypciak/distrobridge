@@ -3,7 +3,7 @@
 set -a
 
 PORTABLE=0
-KERNEL='linux-zen'
+KERNEL='linux'
 
 
 # User configuration
