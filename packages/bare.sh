@@ -3,6 +3,7 @@
 _configure_greetd() {
     sed -i "s|USER_HOME|$USER_HOME|g" /etc/greetd/config.toml
     sed -i "s/USER1/$USER1/g" /etc/greetd/config.toml
+    cp -r "$USER1/.config/xsessions" /etc/greetd/sessions
     chown "greeter:greeter" -R /etc/greetd
 }
 
@@ -12,7 +13,6 @@ artix_bare_install() {
 
 arch_bare_install() {
     echo 'btrfs-progs clang dbus dbus dbus-glib dbus-python doas-sudo-shim dosfstools efibootmgr git greetd greetd-tuigreet-bin grub mtools networkmanager openbsd-netcat opendoas openntpd perl python python-pip ttf-dejavu ttf-hack unrar unzip util-linux wget zip'
-
 }
 
 artix_bare_configure() {
