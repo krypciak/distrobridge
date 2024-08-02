@@ -65,3 +65,5 @@ sudo sh install.sh --mode dir --variant arch --dir /mnt/mymountedroot
 ```bash
 sudo sh install.sh  --mode iso --variant arch --iso ./
 ```
+
+[![asciicast](https://asciinema.org/a/670490.svg)](https://asciinema.org/a/670490)
