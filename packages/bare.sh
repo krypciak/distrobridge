@@ -3,7 +3,7 @@
 _configure_greetd() {
     sed -i "s|USER_HOME|$USER_HOME|g" /etc/greetd/config.toml
     sed -i "s/USER1/$USER1/g" /etc/greetd/config.toml
-    cp -r "$USER1/.config/xsessions" /etc/greetd/sessions
+    cp -r "$USER_HOME/.config/xsessions" /etc/greetd/sessions
     chown "greeter:greeter" -R /etc/greetd
 }
 
