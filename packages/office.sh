@@ -1,9 +1,9 @@
 #!/bin/sh
 
 artix_office_install() {
-    echo 'libreoffice-fresh krita-beta-appimage'
+    echo 'libreoffice-fresh krita'
 }
 
 arch_office_install() {
-    echo 'libreoffice-fresh krita-beta-appimage'
+    echo 'libreoffice-fresh krita'
 }
